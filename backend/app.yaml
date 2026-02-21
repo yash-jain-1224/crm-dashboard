@@ -1,0 +1,36 @@
+name: crm-dashboard
+description: Enterprise CRM Dashboard with FastAPI Backend
+
+# Command to start the application
+command:
+  - uvicorn
+  - main:app
+  - --host
+  - "0.0.0.0"
+  - --port
+  - "8000"
+
+# Resource requirements
+resources:
+  cpu: "2"
+  memory: 4Gi
+
+# Permissions
+permissions:
+  service_principal: true
+  workspace_access: true
+
+# Environment variables (configure these in Databricks)
+# env:
+#   - name: DATABRICKS_HOST
+#     value: ${DATABRICKS_HOST}
+#   - name: DATABRICKS_CLIENT_ID
+#     valueFrom:
+#       secretKeyRef:
+#         name: databricks-oauth
+#         key: client-id
+#   - name: DATABRICKS_CLIENT_SECRET
+#     valueFrom:
+#       secretKeyRef:
+#         name: databricks-oauth
+#         key: client-secret

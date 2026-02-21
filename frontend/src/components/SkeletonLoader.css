@@ -1,0 +1,1630 @@
+/* Base Skeleton Styles */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #f8f8f8 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    transparent 100%
+  );
+  animation: shimmerOverlay 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shimmerOverlay {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Skeleton variants */
+.skeleton.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.skeleton.wave {
+  animation: wave 1.8s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Dashboard Skeleton */
+.dashboard-skeleton {
+  width: 100%;
+}
+
+.skeleton-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skeleton-stat-card {
+  height: 120px;
+}
+
+.skeleton-charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skeleton-chart {
+  height: 300px;
+}
+
+.skeleton-tables-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeleton-table {
+  height: 400px;
+}
+
+/* Table Skeleton */
+.table-skeleton {
+  width: 100%;
+}
+
+.skeleton-table-header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-header-cell {
+  height: 40px;
+}
+
+.skeleton-table-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.skeleton-cell {
+  height: 50px;
+}
+
+/* Card List Skeleton */
+.card-list-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.skeleton-card {
+  height: 200px;
+}
+
+.skeleton-card.large {
+  height: 250px;
+}
+
+.skeleton-card.small {
+  height: 150px;
+}
+
+/* Calendar Skeleton */
+.calendar-skeleton {
+  width: 100%;
+}
+
+.skeleton-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.skeleton-calendar-title {
+  width: 200px;
+  height: 40px;
+}
+
+.skeleton-calendar-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.skeleton-calendar-button {
+  width: 80px;
+  height: 36px;
+}
+
+.skeleton-calendar-grid {
+  height: 500px;
+  margin-bottom: 2rem;
+}
+
+.skeleton-events-list {
+  height: 300px;
+}
+
+/* Pipeline Skeleton */
+.pipeline-skeleton {
+  width: 100%;
+}
+
+.skeleton-pipeline-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.skeleton-pipeline-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-pipeline-column-header {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-pipeline-deal {
+  height: 120px;
+}
+
+/* Reports Skeleton */
+.reports-skeleton {
+  width: 100%;
+}
+
+.skeleton-report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.skeleton-report-title {
+  width: 150px;
+  height: 30px;
+}
+
+.skeleton-export-button {
+  width: 120px;
+  height: 40px;
+}
+
+.skeleton-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skeleton-metric {
+  height: 100px;
+}
+
+/* Form Skeleton */
+.form-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeleton-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skeleton-input {
+  height: 40px;
+}
+
+.skeleton-textarea {
+  height: 100px;
+}
+
+.skeleton-button {
+  width: 120px;
+  height: 40px;
+}
+
+/* Tasks Board Skeleton */
+.tasks-board-skeleton {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.skeleton-task-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-task-column-header {
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-task-card-simple {
+  height: 140px;
+}
+
+/* Specialized Card Skeletons */
+.skeleton-card-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Lead Card Skeleton */
+.skeleton-lead-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-lead-card .skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.skeleton-lead-card .skeleton-title {
+  width: 70%;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-lead-card .skeleton-subtitle {
+  width: 50%;
+  height: 16px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-lead-card .skeleton-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.skeleton-lead-card .skeleton-badge {
+  width: 60px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.skeleton-lead-card .skeleton-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-lead-card .skeleton-detail-line {
+  width: 100%;
+  height: 16px;
+}
+
+.skeleton-lead-card .skeleton-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.skeleton-lead-card .skeleton-score {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.skeleton-lead-card .skeleton-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.skeleton-lead-card .skeleton-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+/* Contact Card Skeleton */
+.skeleton-contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.skeleton-contact-card .skeleton-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-contact-card .skeleton-name {
+  width: 60%;
+  height: 22px;
+  margin: 0 auto 0.5rem;
+}
+
+.skeleton-contact-card .skeleton-role {
+  width: 50%;
+  height: 16px;
+  margin: 0 auto 1rem;
+}
+
+.skeleton-contact-card .skeleton-info-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.skeleton-contact-card .skeleton-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skeleton-contact-card .skeleton-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.skeleton-contact-card .skeleton-text {
+  width: 100%;
+  height: 16px;
+}
+
+.skeleton-contact-card .skeleton-button-group {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.skeleton-contact-card .skeleton-btn {
+  flex: 1;
+  height: 36px;
+  border-radius: 6px;
+}
+
+/* Account Card Skeleton */
+.skeleton-account-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-account-card .skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-account-card .skeleton-icon-large {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.skeleton-account-card .skeleton-status {
+  width: 70px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.skeleton-account-card .skeleton-company-name {
+  width: 80%;
+  height: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-account-card .skeleton-industry {
+  width: 50%;
+  height: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-account-card .skeleton-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skeleton-account-card .skeleton-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-account-card .skeleton-stat-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.skeleton-account-card .skeleton-stat-value {
+  width: 70%;
+  height: 18px;
+}
+
+/* Opportunity Card Skeleton */
+.skeleton-opportunity-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-opportunity-card .skeleton-top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.skeleton-opportunity-card .skeleton-opp-name {
+  width: 65%;
+  height: 22px;
+}
+
+.skeleton-opportunity-card .skeleton-amount {
+  width: 30%;
+  height: 28px;
+  border-radius: 6px;
+}
+
+.skeleton-opportunity-card .skeleton-company {
+  width: 55%;
+  height: 16px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-opportunity-card .skeleton-progress-bar {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.skeleton-opportunity-card .skeleton-metadata {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.skeleton-opportunity-card .skeleton-meta-item {
+  width: 100%;
+  height: 16px;
+}
+
+.skeleton-opportunity-card .skeleton-stage-badge {
+  width: 90px;
+  height: 28px;
+  border-radius: 14px;
+  margin-top: 1rem;
+}
+
+/* Campaign Card Skeleton */
+.skeleton-campaign-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skeleton-campaign-card .skeleton-campaign-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeleton-campaign-card .skeleton-campaign-name {
+  width: 70%;
+  height: 22px;
+}
+
+.skeleton-campaign-card .skeleton-campaign-status {
+  width: 80px;
+  height: 26px;
+  border-radius: 13px;
+}
+
+.skeleton-campaign-card .skeleton-subject {
+  width: 90%;
+  height: 18px;
+}
+
+.skeleton-campaign-card .skeleton-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.skeleton-campaign-card .skeleton-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-campaign-card .skeleton-metric-label {
+  width: 60%;
+  height: 14px;
+}
+
+.skeleton-campaign-card .skeleton-metric-value {
+  width: 40%;
+  height: 24px;
+}
+
+.skeleton-campaign-card .skeleton-date {
+  width: 45%;
+  height: 16px;
+}
+
+/* Task Card Skeleton */
+.skeleton-task-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-task-card .skeleton-task-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.skeleton-task-card .skeleton-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.skeleton-task-card .skeleton-task-title {
+  flex: 1;
+  height: 20px;
+}
+
+.skeleton-task-card .skeleton-task-desc {
+  width: 100%;
+  height: 16px;
+  margin-left: 28px;
+}
+
+.skeleton-task-card .skeleton-task-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 28px;
+}
+
+.skeleton-task-card .skeleton-priority {
+  width: 60px;
+  height: 22px;
+  border-radius: 11px;
+}
+
+.skeleton-task-card .skeleton-due-date {
+  width: 80px;
+  height: 16px;
+}
+
+.skeleton-task-card .skeleton-assignee {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: auto;
+}
+
+/* Specialized Table Skeletons */
+.skeleton-table-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Data Table Skeleton with striped rows */
+.skeleton-data-table {
+  width: 100%;
+}
+
+.skeleton-data-table .skeleton-thead {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.skeleton-data-table .skeleton-th {
+  height: 20px;
+  width: 80%;
+}
+
+.skeleton-data-table .skeleton-tbody {
+  padding: 0.5rem 1rem;
+}
+
+.skeleton-data-table .skeleton-tr {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.skeleton-data-table .skeleton-tr:hover {
+  background: #fafafa;
+}
+
+.skeleton-data-table .skeleton-tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.skeleton-data-table .skeleton-td {
+  height: 18px;
+}
+
+.skeleton-data-table .skeleton-td.wide {
+  width: 100%;
+}
+
+.skeleton-data-table .skeleton-td.medium {
+  width: 70%;
+}
+
+.skeleton-data-table .skeleton-td.narrow {
+  width: 40%;
+}
+
+/* Compact Table Skeleton */
+.skeleton-compact-table {
+  width: 100%;
+}
+
+.skeleton-compact-table .skeleton-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.skeleton-compact-table .skeleton-row:last-child {
+  border-bottom: none;
+}
+
+.skeleton-compact-table .skeleton-label {
+  width: 30%;
+  height: 16px;
+}
+
+.skeleton-compact-table .skeleton-value {
+  width: 50%;
+  height: 18px;
+}
+
+/* List Table Skeleton */
+.skeleton-list-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-list-table .skeleton-list-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.skeleton-list-table .skeleton-item-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.skeleton-list-table .skeleton-item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-list-table .skeleton-item-title {
+  width: 60%;
+  height: 18px;
+}
+
+.skeleton-list-table .skeleton-item-subtitle {
+  width: 40%;
+  height: 14px;
+}
+
+.skeleton-list-table .skeleton-item-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.skeleton-list-table .skeleton-action-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+/* Calendar Specific Skeletons */
+.skeleton-calendar-day {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.skeleton-calendar-event {
+  width: 100%;
+  height: 24px;
+  border-radius: 4px;
+  margin-bottom: 0.25rem;
+}
+
+.skeleton-calendar-event.small {
+  height: 18px;
+}
+
+.skeleton-calendar-event.large {
+  height: 32px;
+}
+
+/* Pipeline Specific Skeletons */
+.skeleton-pipeline-deal-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skeleton-pipeline-deal-card .skeleton-deal-company {
+  width: 70%;
+  height: 18px;
+}
+
+.skeleton-pipeline-deal-card .skeleton-deal-value {
+  width: 50%;
+  height: 24px;
+}
+
+.skeleton-pipeline-deal-card .skeleton-deal-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeleton-pipeline-deal-card .skeleton-probability {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.skeleton-pipeline-deal-card .skeleton-owner {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+/* Chart Skeletons */
+.skeleton-chart-wrapper {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.skeleton-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-chart-title {
+  width: 40%;
+  height: 24px;
+}
+
+.skeleton-chart-legend {
+  display: flex;
+  gap: 1rem;
+}
+
+.skeleton-legend-item {
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+}
+
+.skeleton-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 250px;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.skeleton-bar {
+  flex: 1;
+  max-width: 60px;
+  background: linear-gradient(180deg, #e0e0e0 0%, #f0f0f0 100%);
+  border-radius: 4px 4px 0 0;
+  animation: barGrow 1.5s ease-in-out infinite;
+}
+
+.skeleton-bar:nth-child(1) { height: 80%; animation-delay: 0s; }
+.skeleton-bar:nth-child(2) { height: 60%; animation-delay: 0.1s; }
+.skeleton-bar:nth-child(3) { height: 90%; animation-delay: 0.2s; }
+.skeleton-bar:nth-child(4) { height: 70%; animation-delay: 0.3s; }
+.skeleton-bar:nth-child(5) { height: 85%; animation-delay: 0.4s; }
+.skeleton-bar:nth-child(6) { height: 75%; animation-delay: 0.5s; }
+
+@keyframes barGrow {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.skeleton-line-chart {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.skeleton-line-path {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 0%,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%,
+    #e0e0e0 100%
+  );
+  position: relative;
+}
+
+.skeleton-line-path::before,
+.skeleton-line-path::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #d0d0d0;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.skeleton-line-path::before {
+  left: 0;
+}
+
+.skeleton-line-path::after {
+  right: 0;
+}
+
+.skeleton-pie-chart {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #e0e0e0 0deg 120deg,
+    #f0f0f0 120deg 240deg,
+    #e8e8e8 240deg 360deg
+  );
+  margin: 0 auto;
+  position: relative;
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.skeleton-pie-chart::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+/* Stat Card Skeletons */
+.skeleton-stat-card-detailed {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-stat-card-detailed .skeleton-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.skeleton-stat-card-detailed .skeleton-stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+.skeleton-stat-card-detailed .skeleton-trend {
+  width: 60px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.skeleton-stat-card-detailed .skeleton-stat-label {
+  width: 60%;
+  height: 16px;
+}
+
+.skeleton-stat-card-detailed .skeleton-stat-value {
+  width: 80%;
+  height: 36px;
+  margin: 0.5rem 0;
+}
+
+.skeleton-stat-card-detailed .skeleton-stat-change {
+  width: 40%;
+  height: 14px;
+}
+
+/* Form Element Skeletons */
+.skeleton-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skeleton-form-label {
+  width: 30%;
+  height: 16px;
+}
+
+.skeleton-form-input {
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.skeleton-form-select {
+  width: 100%;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.skeleton-form-textarea {
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+}
+
+.skeleton-form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skeleton-form-checkbox .skeleton-check {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.skeleton-form-checkbox .skeleton-check-label {
+  width: 60%;
+  height: 16px;
+}
+
+.skeleton-form-button-group {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.skeleton-form-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.skeleton-form-button.primary {
+  width: 120px;
+}
+
+/* Header Skeletons */
+.skeleton-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.skeleton-page-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.skeleton-page-title .skeleton-title {
+  width: 30%;
+  height: 32px;
+}
+
+.skeleton-page-title .skeleton-subtitle {
+  width: 50%;
+  height: 18px;
+}
+
+.skeleton-page-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.skeleton-page-actions .skeleton-action-btn {
+  width: 120px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* Search and Filter Skeletons */
+.skeleton-search-bar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-search-input {
+  flex: 1;
+  height: 42px;
+  border-radius: 8px;
+}
+
+.skeleton-filter-button {
+  width: 100px;
+  height: 42px;
+  border-radius: 8px;
+}
+
+/* Badge and Tag Skeletons */
+.skeleton-badge-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.skeleton-badge {
+  width: 70px;
+  height: 24px;
+  border-radius: 12px;
+}
+
+.skeleton-badge.small {
+  width: 50px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.skeleton-badge.large {
+  width: 90px;
+  height: 28px;
+  border-radius: 14px;
+}
+
+/* Avatar Skeletons */
+.skeleton-avatar-group {
+  display: flex;
+  margin-left: -8px;
+}
+
+.skeleton-avatar-group .skeleton-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  margin-left: -8px;
+}
+
+.skeleton-avatar-group .skeleton-avatar:first-child {
+  margin-left: 0;
+}
+
+/* Pagination Skeleton */
+.skeleton-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.skeleton-page-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+}
+
+/* Breadcrumb Skeleton */
+.skeleton-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-breadcrumb-item {
+  width: 80px;
+  height: 16px;
+  border-radius: 4px;
+}
+
+.skeleton-breadcrumb-separator {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+/* Tab Skeleton */
+.skeleton-tabs {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-tab {
+  width: 100px;
+  height: 40px;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Modal Skeleton */
+.skeleton-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.skeleton-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.skeleton-modal-title {
+  width: 60%;
+  height: 24px;
+}
+
+.skeleton-modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.skeleton-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.skeleton-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .skeleton-charts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skeleton-account-card .skeleton-stats,
+  .skeleton-opportunity-card .skeleton-metadata,
+  .skeleton-campaign-card .skeleton-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .skeleton-charts-grid,
+  .skeleton-tables-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-list-skeleton {
+    grid-template-columns: 1fr;
+  }
+
+  .skeleton-pipeline-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .tasks-board-skeleton {
+    grid-template-columns: 1fr;
+  }
+  
+  .skeleton-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .skeleton-page-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .skeleton-page-actions {
+    width: 100%;
+  }
+  
+  .skeleton-page-actions .skeleton-action-btn {
+    flex: 1;
+  }
+  
+  .skeleton-search-bar {
+    flex-direction: column;
+  }
+  
+  .skeleton-filter-button {
+    width: 100%;
+  }
+  
+  .skeleton-data-table .skeleton-thead,
+  .skeleton-data-table .skeleton-tr {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .skeleton-bar-chart {
+    height: 200px;
+  }
+  
+  .skeleton-pie-chart {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .skeleton-pie-chart::after {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .skeleton-form-button-group {
+    flex-direction: column;
+  }
+  
+  .skeleton-form-button {
+    width: 100%;
+  }
+  
+  .skeleton-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+  
+  .skeleton-pagination {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .skeleton-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skeleton-contact-card .skeleton-button-group,
+  .skeleton-lead-card .skeleton-footer {
+    flex-direction: column;
+  }
+  
+  .skeleton-card-wrapper {
+    padding: 1rem;
+  }
+  
+  .skeleton-chart-wrapper,
+  .skeleton-stat-card-detailed {
+    padding: 1rem;
+  }
+  
+  .skeleton-modal {
+    padding: 1rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      #2d3748 0%,
+      #374151 20%,
+      #2d3748 40%,
+      #2d3748 100%
+    );
+  }
+  
+  .skeleton::after {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+  }
+  
+  .skeleton-card-wrapper,
+  .skeleton-table-wrapper,
+  .skeleton-chart-wrapper,
+  .skeleton-stat-card-detailed,
+  .skeleton-pipeline-deal-card,
+  .skeleton-list-table .skeleton-list-item,
+  .skeleton-modal {
+    background: #1a202c;
+    border-color: #2d3748;
+  }
+  
+  .skeleton-data-table .skeleton-thead {
+    background: #2d3748;
+    border-bottom-color: #374151;
+  }
+  
+  .skeleton-data-table .skeleton-tr {
+    border-bottom-color: #2d3748;
+  }
+  
+  .skeleton-data-table .skeleton-tr:nth-child(even) {
+    background: #1e2733;
+  }
+  
+  .skeleton-data-table .skeleton-tr:hover {
+    background: #252d3a;
+  }
+  
+  .skeleton-campaign-card .skeleton-metrics {
+    background: #2d3748;
+  }
+  
+  .skeleton-bar {
+    background: linear-gradient(180deg, #374151 0%, #2d3748 100%);
+  }
+  
+  .skeleton-line-path {
+    background: linear-gradient(
+      90deg,
+      #374151 0%,
+      #2d3748 25%,
+      #374151 50%,
+      #2d3748 75%,
+      #374151 100%
+    );
+  }
+  
+  .skeleton-line-path::before,
+  .skeleton-line-path::after {
+    background: #4a5568;
+  }
+  
+  .skeleton-pie-chart {
+    background: conic-gradient(
+      #374151 0deg 120deg,
+      #2d3748 120deg 240deg,
+      #4a5568 240deg 360deg
+    );
+  }
+  
+  .skeleton-pie-chart::after {
+    background: #1a202c;
+  }
+  
+  .skeleton-tabs,
+  .skeleton-modal-header,
+  .skeleton-modal-footer {
+    border-color: #2d3748;
+  }
+  
+  .skeleton-avatar-group .skeleton-avatar {
+    border-color: #1a202c;
+  }
+}
+
+/* Custom Skeleton Themes */
+.skeleton-theme-primary {
+  background: linear-gradient(
+    90deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(59, 130, 246, 0.2) 20%,
+    rgba(59, 130, 246, 0.1) 40%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+}
+
+.skeleton-theme-success {
+  background: linear-gradient(
+    90deg,
+    rgba(16, 185, 129, 0.1) 0%,
+    rgba(16, 185, 129, 0.2) 20%,
+    rgba(16, 185, 129, 0.1) 40%,
+    rgba(16, 185, 129, 0.1) 100%
+  );
+}
+
+.skeleton-theme-warning {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 158, 11, 0.1) 0%,
+    rgba(245, 158, 11, 0.2) 20%,
+    rgba(245, 158, 11, 0.1) 40%,
+    rgba(245, 158, 11, 0.1) 100%
+  );
+}
+
+/* Accessibility */
+.skeleton[aria-busy="true"] {
+  cursor: wait;
+}
+
+.skeleton:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton,
+  .skeleton::after,
+  .skeleton-pie-chart,
+  .skeleton-bar {
+    animation: none;
+  }
+  
+  .skeleton {
+    background: #f0f0f0;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    .skeleton {
+      background: #2d3748;
+    }
+  }
+}
+
+/* Print Styles */
+@media print {
+  .skeleton,
+  .skeleton-card-wrapper,
+  .skeleton-table-wrapper,
+  .skeleton-chart-wrapper {
+    display: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .skeleton {
+    background: linear-gradient(90deg, #cccccc 25%, #999999 50%, #cccccc 75%);
+  }
+  
+  .skeleton-card-wrapper,
+  .skeleton-table-wrapper {
+    border-width: 2px;
+    border-color: #000000;
+  }
+}

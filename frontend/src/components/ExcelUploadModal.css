@@ -1,0 +1,720 @@
+.excel-upload-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.excel-upload-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+.excel-upload-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.excel-upload-modal-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.excel-upload-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.excel-upload-close-btn:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.excel-upload-content {
+  margin-bottom: 24px;
+}
+
+.excel-upload-section {
+  margin-bottom: 24px;
+}
+
+.excel-upload-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.excel-upload-section p {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.excel-upload-dropzone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  background-color: #f8fafc;
+}
+
+.excel-upload-dropzone:hover {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+.excel-upload-dropzone.drag-over {
+  border-color: #3b82f6;
+  background-color: #dbeafe;
+  transform: scale(1.02);
+}
+
+.excel-upload-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  color: #3b82f6;
+}
+
+.excel-upload-dropzone p {
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.excel-upload-dropzone small {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.excel-upload-file-input {
+  display: none;
+}
+
+.excel-upload-selected-file {
+  background-color: #f1f5f9;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.excel-upload-file-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #3b82f6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.excel-upload-file-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.excel-upload-file-name {
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.excel-upload-file-size {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.excel-upload-remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ef4444;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.excel-upload-remove-btn:hover {
+  background-color: #fee2e2;
+}
+
+.excel-download-template-btn {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.excel-download-template-btn:hover {
+  background-color: #e2e8f0;
+  border-color: #94a3b8;
+}
+
+.excel-download-template-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.excel-upload-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.excel-upload-cancel-btn {
+  background-color: white;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.excel-upload-cancel-btn:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.excel-upload-submit-btn {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.excel-upload-submit-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.excel-upload-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.excel-upload-error {
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px;
+  color: #991b1b;
+  font-size: 14px;
+  margin-top: 16px;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.retry-upload-btn {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.retry-upload-btn:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.retry-upload-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Progress Display */
+.excel-upload-progress {
+  background-color: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+  transition: all 0.3s ease;
+}
+
+.excel-upload-progress.paused {
+  background-color: #fef3c7;
+  border: 1px solid #fcd34d;
+}
+
+.excel-upload-progress h4 {
+  color: #1e40af;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+.excel-upload-progress.paused h4 {
+  color: #92400e;
+}
+
+.excel-upload-progress p {
+  color: #1e40af;
+  font-size: 14px;
+  margin: 8px 0 4px 0;
+}
+
+.excel-upload-progress.paused p {
+  color: #92400e;
+}
+
+/* Upload Control Buttons */
+.upload-control-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pause-upload-btn,
+.resume-upload-btn,
+.cancel-upload-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  white-space: nowrap;
+}
+
+.pause-upload-btn {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.pause-upload-btn:hover {
+  background-color: #d97706;
+}
+
+.resume-upload-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.resume-upload-btn:hover {
+  background-color: #059669;
+}
+
+.cancel-upload-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.cancel-upload-btn:hover {
+  background-color: #dc2626;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e7ff;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.excel-upload-progress.paused .progress-bar-container {
+  background-color: #fef3c7;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  animation: shimmer 2s infinite;
+}
+
+.progress-bar.paused {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+  animation: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.excel-upload-success {
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.excel-upload-success h4 {
+  color: #065f46;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.excel-upload-success p {
+  color: #047857;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.excel-upload-success-details {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #a7f3d0;
+}
+
+/* Enhanced Error Section */
+.excel-upload-error-section {
+  margin-top: 16px;
+}
+
+.error-actions-bar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.error-search-box {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 12px;
+  gap: 8px;
+}
+
+.error-search-box svg {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.error-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #1e293b;
+}
+
+.error-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.error-search-clear {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  color: #64748b;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.error-search-clear:hover {
+  background-color: #f1f5f9;
+  color: #1e293b;
+}
+
+.export-errors-btn {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.export-errors-btn:hover {
+  background-color: #b91c1c;
+}
+
+.error-stats {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #991b1b;
+  font-weight: 500;
+}
+
+.excel-upload-failed-records {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 8px;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  background-color: #fef2f2;
+}
+
+.excel-upload-failed-records.show-all {
+  max-height: 600px;
+}
+
+.excel-upload-failed-record {
+  background-color: white;
+  padding: 12px;
+  margin: 8px;
+  border-radius: 6px;
+  border: 1px solid #fee2e2;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.excel-upload-failed-record:hover {
+  border-color: #fecaca;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.failed-record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+
+.failed-record-row {
+  background-color: #dc2626;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.failed-record-data-preview {
+  flex: 1;
+  color: #64748b;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.failed-record-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #991b1b;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.failed-record-error svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.failed-record-error span {
+  flex: 1;
+  word-break: break-word;
+}
+
+.failed-record-details {
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.failed-record-details summary {
+  color: #3b82f6;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 6px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.failed-record-details summary:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.failed-record-data {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  overflow-x: auto;
+  color: #334155;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.no-errors-found {
+  padding: 24px;
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.toggle-errors-btn {
+  width: 100%;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: all 0.2s;
+}
+
+.toggle-errors-btn:hover {
+  background-color: #fee2e2;
+  border-color: #fca5a5;
+}
+
+/* Scrollbar styling for error list */
+.excel-upload-failed-records::-webkit-scrollbar {
+  width: 8px;
+}
+
+.excel-upload-failed-records::-webkit-scrollbar-track {
+  background: #fef2f2;
+  border-radius: 4px;
+}
+
+.excel-upload-failed-records::-webkit-scrollbar-thumb {
+  background: #fca5a5;
+  border-radius: 4px;
+}
+
+.excel-upload-failed-records::-webkit-scrollbar-thumb:hover {
+  background: #f87171;
+}
+
+.failed-record-data::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.failed-record-data::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 3px;
+}
+
+.failed-record-data::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 3px;
+}
+
+.failed-record-data::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

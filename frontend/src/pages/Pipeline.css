@@ -1,0 +1,172 @@
+.pipeline-page .page-header {
+  margin-bottom: 24px;
+}
+
+.pipeline-view {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+}
+
+.pipeline-stage {
+  min-width: 280px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.stage-header {
+  padding: 16px;
+  color: white;
+}
+
+/* Prospecting - Professional Slate */
+.pipeline-stage:nth-child(1) .stage-header {
+  background: linear-gradient(135deg, #94a3b8 0%, #64748b 100%);
+}
+
+/* Qualification - Corporate Navy */
+.pipeline-stage:nth-child(2) .stage-header {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+/* Proposal - Executive Purple */
+.pipeline-stage:nth-child(3) .stage-header {
+  background: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+}
+
+/* Negotiation - Premium Emerald */
+.pipeline-stage:nth-child(4) .stage-header {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* Closed/Won - Success Gold */
+.pipeline-stage:nth-child(5) .stage-header {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.stage-name {
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+.stage-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.stage-count {
+  opacity: 0.9;
+  color: #ffffffe0;
+}
+
+.stage-value {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.stage-weighted {
+  opacity: 0.9;
+  font-size: 12px;
+}
+
+.stage-deals {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 400px;
+}
+
+.pipeline-deal {
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.2s;
+  cursor: grab;
+  user-select: none;
+}
+
+.pipeline-deal:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.deal-company {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.deal-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--success-color);
+  margin-bottom: 12px;
+}
+
+.deal-probability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.probability-bar-container {
+  flex: 1;
+  height: 6px;
+  background: var(--border-color);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.probability-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #10b981 100%);
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.probability-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* Drag and Drop Styles */
+.pipeline-deal.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.pipeline-stage.drag-over {
+  background: var(--surface-hover);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.pipeline-stage.drag-over .stage-deals {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+.pipeline-deal:active {
+  cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+  .pipeline-view {
+    flex-direction: column;
+  }
+  
+  .pipeline-stage {
+    min-width: 100%;
+  }
+}

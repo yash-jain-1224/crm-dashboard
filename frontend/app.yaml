@@ -1,0 +1,12 @@
+name: crm-dashboard
+description: Enterprise CRM Dashboard for Databricks Apps
+runtime: static
+entry_point: dist/index.html
+
+resources:
+  cpu: 1
+  memory: 2Gi
+
+permissions:
+  - service_principal: true
+  - workspace_access: true
